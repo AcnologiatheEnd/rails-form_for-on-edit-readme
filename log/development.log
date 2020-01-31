@@ -761,3 +761,140 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+Started GET "/" for 73.198.209.174 at 2020-01-31 02:14:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 26ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 73.198.209.174 at 2020-01-31 02:14:13 +0000
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 378ms (Views: 370.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for 73.198.209.174 at 2020-01-31 02:14:28 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8+8UoxE4AUe4awJl7bkfRwTHt/17RHwIVBohKXqw5rQlMt9FASgu88hbyWcguMqNsWM0v3/psevkW5iF7Bvk1w==", "title"=>"nine", "description"=>"nine nine nien", "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "nine"], ["description", "nine nine nien"], ["created_at", "2020-01-31 02:14:28.237719"], ["updated_at", "2020-01-31 02:14:28.237719"]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://159.203.187.180:37955/posts/5
+Completed 302 Found in 17ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/posts/5" for 73.198.209.174 at 2020-01-31 02:14:28 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/5/edit" for 73.198.209.174 at 2020-01-31 02:14:34 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/5" for 73.198.209.174 at 2020-01-31 02:14:42 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0yBS3j44w4Nh2Kp8rKYDyb4gV5c+sCl+kz7t4ExfcAgF/Zk4LijsNxHoYX5hp9YDC4TU1Tod5J0jf1RM2vRyaw==", "post"=>{"title"=>"nine", "description"=>"nine nine niene nine"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2020-01-31 02:14:42.399159"], ["id", 5]]
+  [1m[35m (26.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://159.203.187.180:37955/posts/5
+Completed 302 Found in 36ms (ActiveRecord: 26.6ms)
+
+
+Started GET "/posts/5" for 73.198.209.174 at 2020-01-31 02:14:42 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/5" for 73.198.209.174 at 2020-01-31 02:16:34 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5" for 73.198.209.174 at 2020-01-31 02:16:38 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 73.198.209.174 at 2020-01-31 02:19:26 +0000
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 21.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/posts" for 73.198.209.174 at 2020-01-31 02:19:42 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZUQormI9kVVlg+my7wtAfK20tAhKfRpe5eAHqGnr3S2zmeNIci2+4RWzIrAiCpW2GBA3Sk7Q171Vob4E/0DfTg==", "title"=>"fire", "description"=>"in the boot", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "fire"], ["description", "in the boot"], ["created_at", "2020-01-31 02:19:42.854816"], ["updated_at", "2020-01-31 02:19:42.854816"]]
+  [1m[35m (72.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://159.203.187.180:37955/posts/6
+Completed 302 Found in 79ms (ActiveRecord: 73.0ms)
+
+
+Started GET "/posts/6" for 73.198.209.174 at 2020-01-31 02:19:42 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/6/edit" for 73.198.209.174 at 2020-01-31 02:19:49 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/6" for 73.198.209.174 at 2020-01-31 02:19:54 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WlNx4dekekrZXOV1NxQXs1u7UXMTgmzOSggACb8vKYeMjroHx7RV/qlsLnf6FcJ57h/SMRcvoS36SbmlKYQr5A==", "post"=>{"title"=>"fire", "description"=>"in tha boot"}, "commit"=>"Update Post", "id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "in tha boot"], ["updated_at", "2020-01-31 02:19:54.600156"], ["id", 6]]
+  [1m[35m (26.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://159.203.187.180:37955/posts/6
+Completed 302 Found in 33ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/posts/6" for 73.198.209.174 at 2020-01-31 02:19:54 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
